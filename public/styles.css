@@ -2,14 +2,14 @@
   font-family: 'Crete Round';
   font-style: normal;
   font-weight: 400;
-  src: url(fonts/CreteRound-Regular.ttf);
+  src: url("fonts/CreteRound-Regular.ttf");
 }
 
 @font-face {
   font-family: 'Crete Round';
   font-style: italic;
   font-weight: 400;
-  src: url(fonts/CreteRound-Italic.ttf);
+  src: url("fonts/CreteRound-Italic.ttf");
 }
 
 body {
@@ -80,6 +80,6 @@ pre mark {
 
 /* Custom styles */
 
-section.s1 { background-image: url("1.jpg"); }
-section.s2 { background-image: url("2.jpg"); }
-section.s3 { background-image: url("3.jpg"); }
+section.s1 { background-image: url("images/1.jpg"); }
+section.s2 { background-image: url("images/2.jpg"); }
+section.s3 { background-image: url("images/3.jpg"); }

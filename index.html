@@ -1,165 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <style>
-            @font-face {
-                font-family: 'Crete Round';
-                font-style: normal;
-                font-weight: 400;
-                src: url(fonts/CreteRound-Regular.ttf);
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: 'Crete Round';
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/CreteRound-Regular.ttf);
+      }
 
-            @font-face {
-                font-family: 'Crete Round';
-                font-style: italic;
-                font-weight: 400;
-                src: url(fonts/CreteRound-Italic.ttf);
-            }
+      @font-face {
+        font-family: 'Crete Round';
+        font-style: italic;
+        font-weight: 400;
+        src: url(fonts/CreteRound-Italic.ttf);
+      }
 
-            body {
-                font-family: "Crete Round", sans-serif;
-                margin: 0;
-                padding: 0;
-                height: 100%;
-                position: relative;
-                overflow: hidden;
-            }
+      body {
+        font-family: "Crete Round", sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
 
-            section {
-                width: 100%;
-                height: 100%;
-                background-repeat: no-repeat;
-                page-break-after: always;
-                background-size: cover;
-                position: relative;
-                overflow: hidden;
-            }
+      section {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        page-break-after: always;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+      }
 
-            section p {
-                margin: 0;
-                padding: 40px;
-                font-size: 50px;
-            }
+      section p {
+        margin: 0;
+        padding: 40px;
+        font-size: 50px;
+      }
 
-            section p mark {
-                font-weight: 500;
-                padding: 8px 8px 4px 8px;
-                color: #111;
-                background: #ff0;
-            }
+      section p mark {
+        font-weight: 500;
+        padding: 8px 8px 4px 8px;
+        color: #111;
+        background: #ff0;
+      }
 
-            section p mark a {
-                color: #f00;
-                text-decoration: none;
-            }
+      section p mark a {
+        color: #f00;
+        text-decoration: none;
+      }
 
-            pre {
-                font-family: "Menlo", monospace;
-                margin: 0;
-                display: block;
-                padding: 40px;
-                font-size: 1.7em;
-                line-height: 1.5em;
-            }
+      pre {
+        font-family: "Menlo", monospace;
+        margin: 0;
+        display: block;
+        padding: 40px;
+        font-size: 1.7em;
+        line-height: 1.5em;
+      }
 
-            pre mark {
-                color: #999;
-            }
+      pre mark {
+        color: #999;
+      }
 
-            pre mark {
-                background-color: #ff0;
-                color: #000;
-            }
+      pre mark {
+        background-color: #ff0;
+        color: #000;
+      }
 
-            @media screen {
-                html {
-                    height: 100%;
-                }
+      @media screen {
+        html {
+          height: 100%;
+        }
 
-                #slides, #print {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
+        #slides, #print {
+          width: 100%;
+          height: 100%;
+        }
+      }
 
-            /* Custom styles */
+      /* Custom styles */
 
-            section.s1 { background-image: url("1.jpg"); }
-            section.s2 { background-image: url("2.jpg"); }
-            section.s3 { background-image: url("3.jpg"); }
+      section.s1 { background-image: url("1.jpg"); }
+      section.s2 { background-image: url("2.jpg"); }
+      section.s3 { background-image: url("3.jpg"); }
 
-        </style>
+    </style>
 
-        <title>Filmo</title>
-    </head>
-    <body>
-        <div id="slides">
-            <section class="s1">
-                <p><mark>Click or press the right arrow key.</mark></p>
-            </section>
+    <title>Filmo</title>
+  </head>
+  <body>
+    <div id="slides">
+      <section class="s1">
+      <p><mark>Click or press the right arrow key.</mark></p>
+      </section>
 
-            <section class="s2">
-                <p><mark>Huge background images.</mark></p>
-            </section>
+      <section class="s2">
+      <p><mark>Huge background images.</mark></p>
+      </section>
 
-            <section class="s3">
-                <p><mark>Filmo. Get it <a href="http://soveran.github.com/filmo">here</a>.</mark></p>
-            </section>
-        </div>
+      <section class="s3">
+      <p><mark>Filmo. Get it <a href="http://soveran.github.com/filmo">here</a>.</mark></p>
+      </section>
+    </div>
 
-        <script type="text/javascript">
-            min_slide = 0;
-            max_slide = document.getElementById('slides').children.length - 1;
+    <script type="text/javascript">
+      min_slide = 0;
+      max_slide = document.getElementById('slides').children.length - 1;
 
-            function slide() {
-                if (localStorage["slide"] == undefined) {
-                    return 0;
-                } else {
-                    return parseInt(localStorage["slide"]);
-                }
-            }
+      function slide() {
+        if (localStorage["slide"] == undefined) {
+          return 0;
+        } else {
+          return parseInt(localStorage["slide"]);
+        }
+      }
 
-            function mark(n) {
-                if (n < min_slide) n = min_slide;
-                if (n > max_slide) n = max_slide;
+function mark(n) {
+  if (n < min_slide) n = min_slide;
+  if (n > max_slide) n = max_slide;
 
-                window.localStorage["slide"] = n;
-            }
+  window.localStorage["slide"] = n;
+}
 
-            function prev() {
-                mark(slide() - 1);
-                window.scrollTo(0, window.innerHeight * slide());
-            }
+function prev() {
+  mark(slide() - 1);
+  window.scrollTo(0, window.innerHeight * slide());
+}
 
-            function next() {
-                mark(slide() + 1);
-                window.scrollTo(0, window.innerHeight * slide());
-            }
+function next() {
+  mark(slide() + 1);
+  window.scrollTo(0, window.innerHeight * slide());
+}
 
-            /* Change slides with the left and right arrow keys */
-            document.onkeyup = function(e) {
-                switch(e.which) {
-                    case 37: prev(); break;
-                    case 39: next(); break;
-                }
-            }
+/* Change slides with the left and right arrow keys */
+document.onkeyup = function(e) {
+  switch(e.which) {
+    case 37: prev(); break;
+    case 39: next(); break;
+  }
+}
 
-            /* Ignore the up and down arrow keys */
-            document.onkeydown = function(e) {
-                switch(e.which) {
-                    case 38:
-                    case 40: return false;
-                }
-            }
+/* Ignore the up and down arrow keys */
+document.onkeydown = function(e) {
+  switch(e.which) {
+    case 38:
+    case 40: return false;
+  }
+}
 
-            document.onclick = function(e) {
-                if(e.target.nodeName != "A") next();
-            }
+document.onclick = function(e) {
+  if(e.target.nodeName != "A") next();
+}
 
-            window.onload = function() {
-                scrollTo(0, window.innerHeight * slide());
-            }
-        </script>
+window.onload = function() {
+  scrollTo(0, window.innerHeight * slide());
+}
+</script>
     </body>
-</html>
+  </html>

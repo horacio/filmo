@@ -1,19 +1,9 @@
-@font-face {
-  font-family: 'Crete Round';
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/CreteRound-Regular.ttf");
-}
-
-@font-face {
-  font-family: 'Crete Round';
-  font-style: italic;
-  font-weight: 400;
-  src: url("fonts/CreteRound-Italic.ttf");
+html {
+  height: 100%;
 }
 
 body {
-  font-family: "Crete Round", sans-serif;
+  font-family: "Crete Round", "Trebuchet MS", sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -21,14 +11,20 @@ body {
   overflow: hidden;
 }
 
+div#slides {
+  width: 100%;
+  height: 100%;
+}
+
 section {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   page-break-after: always;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  position: relative;
-  overflow: hidden;
 }
 
 section p {
@@ -37,48 +33,17 @@ section p {
   font-size: 50px;
 }
 
-section p mark {
+section p span {
   font-weight: 500;
   padding: 8px 8px 4px 8px;
-  color: #111;
-  background: #ff0;
+  color: black;
+  background: yellow;
 }
 
-section p mark a {
+section p span a {
   color: #f00;
   text-decoration: none;
 }
-
-pre {
-  font-family: "Menlo", monospace;
-  margin: 0;
-  display: block;
-  padding: 40px;
-  font-size: 1.7em;
-  line-height: 1.5em;
-}
-
-pre mark {
-  color: #999;
-}
-
-pre mark {
-  background-color: #ff0;
-  color: #000;
-}
-
-@media screen {
-  html {
-    height: 100%;
-  }
-
-  #slides, #print {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/* Custom styles */
 
 section.s1 { background-image: url("images/1.jpg"); }
 section.s2 { background-image: url("images/2.jpg"); }
